@@ -14,13 +14,12 @@ class Pizza(db.Model):
     restaurant_pizzas = db.relationship('RestaurantPizza', back_populates = "pizza", cascade = 'all, delete-orphan')
 
     def __repr__(self):
-        return f"<Pizza {self.id}: {self.name}, {self.ingredients}>"
+        return f"<Pizza {self.id}: {self.name} - {self.ingredients}>"
     
         
     def to_dict(self):
         return {
             "id": self.id,
             "name": self.name,
-            "ingredients": self.ingredients,
-            "restaurants": [restaurant.to_dict() for restaurant in self.restaurants]
+            "ingredients": self.ingredients
         }
