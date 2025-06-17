@@ -113,6 +113,7 @@ If you wish to use the Flask shell, use:
 
 3. GET /restaurants/<int:id> - `http://127.0.0.1:5555/restaurants/3`:
     > If found:
+
         {
             "address": "789 Oven Lane, Tomato Town",
             "id": 3,
@@ -211,3 +212,8 @@ Therefore to use Postman:
 
 
 **NOTE:** When using Postman best to have you server running, which, as earlier mentioned uses `flask run` in the project root folder in the terminal.
+
+
+## Resources
+
+- [Tullier-Blog-CLI-Project Git Repo](https://github.com/Silva-NK/Pizza-API-Code-Challenge)
