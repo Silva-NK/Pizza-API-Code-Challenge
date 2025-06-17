@@ -18,3 +18,13 @@ class RestaurantPizza(db.Model):
 
     def __repr__(self):
         return f"<Restaurant_Pizza {self.id}: {self.pizza.name} for ${self.price} at {self.restaurant.name}>"
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "price": self.price,
+            "pizza_id": self.pizza_id,
+            "restaurant_id": self.restaurant_id,
+            "pizza": self.pizzas.to_dict() if self.pizzas else None,
+            "restaurant": self.restaurants.to_dict() if self.restaurants else None
+        }
