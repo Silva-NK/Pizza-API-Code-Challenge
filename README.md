@@ -62,11 +62,11 @@ Pizza API is a lightweight RESTful-like backend application for managing restaur
 
 1. **Install dependencies and create a virtual environment:**
 
-    > Clone the repository
-    > Run `pipenv install` to install dependencies.
-    > Run `pipenv shell` to activate virtual environment.
-    > Run `export FLASK_APP=server/app.py` followed by `export FLASK_RUN_PORT=5555` to set up environment variables.
-    > Finally to run use `flask run`.
+    > 1. Clone the repository
+    > 2. Run `pipenv install` to install dependencies.
+    > 3. Run `pipenv shell` to activate virtual environment.
+    > 4. Run `export FLASK_APP=server/app.py` followed by `export FLASK_RUN_PORT=5555` to set up environment variables.
+    > 5. Finally to run use `flask run`.
 
 ### Optional instructions
 
