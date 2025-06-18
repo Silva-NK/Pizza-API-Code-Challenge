@@ -97,21 +97,21 @@ If you wish to use the Flask shell, use:
 
 2. GET /restaurants - `http://127.0.0.1:5555/restaurants`:
 
-    [
-        {
-            "address": "123 Slice Street, Mozzarella City",
-            "id": 1,
-            "name": "Domino Tower Pizza"
-        },
-        {
-            "address": "789 Oven Lane, Tomato Town",
-            "id": 3,
-            "name": "The Saucy Wheel"
-        },
-        ...
-    ]
+    >   [
+            {
+                "address": "123 Slice Street, Mozzarella City",
+                "id": 1,
+                "name": "Domino Tower Pizza"
+            },
+            {
+                "address": "789 Oven Lane, Tomato Town",
+                "id": 3,
+                "name": "The Saucy Wheel"
+            },
+            ...
+        ]
 
-3. GET /restaurants/<int:id> - `http://127.0.0.1:5555/restaurants/3`:
+3. GET /restaurants/<<int:id>> - `http://127.0.0.1:5555/restaurants/3`:
     > If found:
 
         {
@@ -126,7 +126,7 @@ If you wish to use the Flask shell, use:
             "error": "Restaurant not found"
         }
 
-4. DELETE /restaurants/<int:id> - `http://127.0.0.1:5555/restaurants/3`:
+4. DELETE /restaurants/<<int:id>> - `http://127.0.0.1:5555/restaurants/3`:
     > If found:
 
         (no content, status 204)
@@ -139,60 +139,60 @@ If you wish to use the Flask shell, use:
 
 5. GET /pizzas - `http://127.0.0.1:5555/pizzas`:
 
-    [
-        {
-            "id": 1,
-            "ingredients": "Dough, Tomato Sauce, Mozzarella, Ham, Pineapple",
-            "name": "Tropic Thunder"
-        },
-        {
-            "id": 2,
-            "ingredients": "Dough, BBQ Sauce, Pepperoni, Sausage, Bacon, Ham",
-            "name": "Meat Inferno"
-        },
-        ...
-    ]
+    >   [
+            {
+                "id": 1,
+                "ingredients": "Dough, Tomato Sauce, Mozzarella, Ham, Pineapple",
+                "name": "Tropic Thunder"
+            },
+            {
+                "id": 2,
+                "ingredients": "Dough, BBQ Sauce, Pepperoni, Sausage, Bacon, Ham",
+                "name": "Meat Inferno"
+            },
+            ...
+        ]
 
 6. POST /restaurant_pizzas - `http://127.0.0.1:5555/restaurant_pizzas`:
 
-    Add request:
+    > Add request:
 
-    {
-        "price": 5,
-        "pizza_id": 1,
-        "restaurant_id": 3
-    }
-
-    Successful response:
-
-    {
-        "id": 4,
-        "price": 5,
-        "pizza_id": 1,
-        "restaurant_id": 3,
-        "pizza": {
-            "id": 1,
-            "name": "Emma",
-            "ingredients": "Dough, Tomato Sauce, Cheese"
-        },
-        "restaurant": {
-            "id": 3,
-            "name": "Kiki's Pizza",
-            "address": "address3"
+        {
+            "price": 5,
+            "pizza_id": 1,
+            "restaurant_id": 3
         }
-    }
 
-    Validation Error (price out of range)::
+    > Successful response:
 
-    {
-        "errors": ["Price must be between 1 and 30"]
-    }
+        {
+            "id": 4,
+            "price": 5,
+            "pizza_id": 1,
+            "restaurant_id": 3,
+            "pizza": {
+                "id": 1,
+                "name": "Emma",
+                "ingredients": "Dough, Tomato Sauce, Cheese"
+            },
+            "restaurant": {
+                "id": 3,
+                "name": "Kiki's Pizza",
+                "address": "address3"
+            }
+        }
 
-    Foreign Key Error (IDs don't exist): 
+    > Validation Error (price out of range)::
 
-    {
-        "errors": ["Invalid pizza_id or restaurant_id"]
-    }
+        {
+            "errors": ["Price must be between 1 and 30"]
+        }
+
+    > Foreign Key Error (IDs don't exist): 
+
+        {
+            "errors": ["Invalid pizza_id or restaurant_id"]
+        }
 
 ## Validation rules
 - `price` must be between 1 and 30 in POST /restaurant_pizzas.
