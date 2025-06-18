@@ -76,10 +76,10 @@ If creating different database Models and seeking to save them use:
 - `flask db upgrade`
 
 If you wish to make use of the seed data in seed.py:
-    > Run `python -m server.seed`
+- Run `python -m server.seed`
 
 If you wish to use the Flask shell, use:
-    > Run `flask shell`
+- Run `flask shell`
 
 ## Route Summary
 1. Landing Page : `/` : OPens Landing page
