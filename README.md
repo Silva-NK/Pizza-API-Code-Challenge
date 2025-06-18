@@ -71,9 +71,9 @@ Pizza API is a lightweight RESTful-like backend application for managing restaur
 ### Optional instructions
 
 If creating different database Models and seeking to save them use:
-> - `flask db init`(Use only once)
-> - `flask db migrate -m "Initial migration"` (Change the qouted text to meet migration conditions.)
-> - `flask db upgrade`
+- `flask db init`(Use only once)
+- `flask db migrate -m "Initial migration"` (Change the qouted text to meet migration conditions.)
+- `flask db upgrade`
 
 If you wish to make use of the seed data in seed.py:
     > Run `python -m server.seed`
